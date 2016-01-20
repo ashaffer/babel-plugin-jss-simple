@@ -32,7 +32,7 @@ const style = css({
   primary: {
     color: 'green'
   }
-})
+}, __filename)
 ```
 
 ## Why do I want this?
