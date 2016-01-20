@@ -1,5 +1,5 @@
 {
-  "name": "@ashaffer/babel-plugin-jss-simple",
+  "name": "babel-plugin-jss-simple",
   "description": "Add filename keys to your jss-simple declarations to help with hot reloading",
   "repository": "git://github.com/ashaffer/babel-plugin-jss-simple.git",
   "version": "0.1.0",
