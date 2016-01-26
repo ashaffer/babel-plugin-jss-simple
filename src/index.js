@@ -5,13 +5,13 @@
 function transform ({types: t}) {
 
   const CallVisitor = {
-    CallExpression (path, {name}) {
+    CallExpression (path, state) {
       const node = path.node
 
-      if (node.callee.name === name && node.arguments.length === 1) {
-        path.replaceWith(t.callExpression(t.identifier(name), [
+      if (node.callee.name === state.name && node.arguments.length === 1) {
+        path.replaceWith(t.callExpression(t.identifier(state.name), [
             node.arguments[0],
-            t.identifier('__filename')
+            t.binaryExpression('+', t.identifier('__filename'), t.stringLiteral('_' + state.idx++))
           ]))
       }
     }
@@ -26,7 +26,7 @@ function transform ({types: t}) {
           let identifier
           node.specifiers.forEach(spec => {
             if (t.isImportDefaultSpecifier(spec)) {
-              path.parentPath.traverse(CallVisitor, {name: spec.local.name})
+              path.parentPath.traverse(CallVisitor, {name: spec.local.name, idx: 1})
             }
           })
         }

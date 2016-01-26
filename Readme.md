@@ -43,6 +43,10 @@ If you are using hot module replacement on the client, you won't be able to tell
 
 No. It will track whatever you've called your default import and rewrite it appropriately.
 
+## Can I use `css` more than once in a given file?
+
+Yes. Each instance of the call will be keyed separately, with `_<n>` being suffixed to the file name key.
+
 ## License
 
 MIT
