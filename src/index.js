@@ -10,7 +10,7 @@ function transform ({types: t}) {
 
       if (node.callee.name === state.name && node.arguments.length === 1) {
         path.replaceWith(t.callExpression(t.identifier(state.name), [
-            node.arguments[0],
+            ...node.arguments,
             t.binaryExpression('+', t.identifier('__filename'), t.stringLiteral('_' + state.idx++))
           ]))
       }
