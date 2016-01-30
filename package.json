@@ -2,7 +2,7 @@
   "name": "babel-plugin-jss-simple",
   "description": "Add filename keys to your jss-simple declarations to help with hot reloading",
   "repository": "git://github.com/ashaffer/babel-plugin-jss-simple.git",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
